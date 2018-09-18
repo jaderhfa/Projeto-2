@@ -1,8 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-3.3.1.slim.min.js"></script>
+
 <title>Calculadora para churrasco</title>
 <link rel = "stylesheet" href="css/bootstrap.min.css" />
+
+<script>
+    function calcular() {
+      //var idadeElement = document.formulario.idade;
+      // Ou ...
+      //var idadeElement = document.getElementById("qtdPessoas");
+      // Com JQuery ...
+      var qtdPessoasElement = $("#qtdPessoas");
+
+      //var idade = idadeElement.value;
+      // Com JQuery ...
+      var idade = qtdPessoasElement.val();
+
+      if (idade >= 18) {
+        alert(idade);
+      } else {
+        alert(idade);
+      }
+
+      qtdPessoasElement.focus();
+
+      //idadeElement.value = '';
+      // Com JQuery ...
+      qtdPessoasElement.val('');
+    }
+  </script>
+
+
+
 </head>
 <body>
 
@@ -37,16 +71,35 @@
   <thead class="thead-light">
     <tr>
       <th scope="col">
-        <div class="btn-group-vertical">
-           <button type="button" class="btn btn-success">1</button> 
-           <button type="button" class="btn btn-success">2</button>
-           <button type="button" class="btn btn-success">3</button>
-           <button type="button" class="btn btn-success">4</button>
-      </th>
-      
+        <div class="btn-group-horizontal">
+          <fieldset>
+           <button type="button" class="btn btn-success" onclick= "alert('Cliquei no 1')">1</button> 
+           <button type="button" class="btn btn-success" onclick= "alert('Cliquei no 2')">2</button>
+           <button type="button" class="btn btn-success" onclick= "alert('Cliquei no 3')">3</button>
+           <button type="button" class="btn btn-success" onclick= "alert('Cliquei no 4')">4</button>
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text" id="btnGroupAddon">ou digite a quantidade: </div>
+              </div>  
+              <input id="qtdPessoas" class="form-control" placeholder="Digite a quantidade" aria-label="Input group example" aria-describedby="btnGroupAddon">
+            </div>
+            <button type="submit" class="btn btn-success" onclick= "calcular()">Proximo</button> 
+           
+          
+          </fieldset>
+          </div>
+           
+          
+        
+
+
+        </th>  
     </tr>
   </thead>
 </table>
+
+
+
 
 <!--Carrousel de imagens-->
 <!--<img src="C:\Users\Alunoinf_2\Desktop\projetoAula10-9\churrasco-seja-um-mestre-nesta-arte_MLB-F-3727432054_012013.jpg" class="max-width: 100%" alt="Imagem Churrasco">-->
